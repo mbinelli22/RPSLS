@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="multiPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPSLS.cs" />
+    <Compile Include="singlePlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
