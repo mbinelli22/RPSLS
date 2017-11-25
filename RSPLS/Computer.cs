@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace RSPLS
 {
-    class multiPlayer : RPSLS
+    class Computer : Player
     {
-        public void playVsHuman()
+        //member variables
+
+        //constructor
+        public Computer()
         {
 
         }
+
+
+        //member methods
     }
 }

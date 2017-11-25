@@ -21,6 +21,10 @@ namespace RSPLS
         int spock = 3;
         int lizard = 4;
 
+        Player player1;
+        Player player2;
+
+
         //constructor
         public RPSLS(string rock, string paper, string scissors, string spock, string lizard)
         {
@@ -34,26 +38,39 @@ namespace RSPLS
 
         //- Create a console application for Rock, Paper, Scissors, Lizard, Spock
         //- Your game should have the option of Single player(vs AI) or 2 player(Human vs Human)
-        public void singlePlayerOrMultiPlayer()
+        public void DisplayRules()
+        {
+            Console.WriteLine("show rules");
+            Console.ReadLine();        
+        }
+
+
+        public void SinglePlayerOrMultiPlayer()
         {
             Console.WriteLine("To play agianst the computer type 'ai'. To play human vs human type 'human'.");
             string vsDecision = Console.ReadLine();
+            player1 = new Human();
             switch (vsDecision)
             {
                 case "ai":
-                    base(singlePlayer);
+                    player2 = new Computer();
                     break;
                 case "human":
-                    base(multiPlayer);
+                    player2 = new Human();
                     break;
             }
+        }
+
+        public void DisplayScore()
+        {
+            Console.WriteLine("{0} {1} ");
         }
 
         List<string> throws = new List<string>() {"Rock", "Paper", "Scissors", "Spock", "Lizard"};
 
 
 
-        private void getRandomThrow()
+        private void GetRandomThrow()
         {
             int randomThrow;
             Random rnd = new Random();
@@ -99,7 +116,7 @@ namespace RSPLS
         //Spock vaporizes Rock
         //(and as it always has) Rock crushes Scissors
 
-        public void playGame()
+        public void PlayGame()
         {
             Console.WriteLine("Type in what you want to play. \n Rock, Paper, Scissors, Lizard, Spock, SHOOT!");
             string shoot = Console.ReadLine();

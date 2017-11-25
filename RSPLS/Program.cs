@@ -11,9 +11,7 @@ namespace RSPLS
         static void Main(string[] args)
         {
             RPSLS RSPLS= new RPSLS();
-            RSPLS.singlePlayerOrMultiPlayer();
-            RSPLS.playGame();
-                        
+            
         }
     }
 }
