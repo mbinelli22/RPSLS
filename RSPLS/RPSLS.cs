@@ -23,12 +23,18 @@ namespace RSPLS
 
         Player player1;
         Player player2;
+        RPSLS_UI UI;
 
 
         //constructor
-        public RPSLS(string rock, string paper, string scissors, string spock, string lizard)
-        {
+        //public RPSLS(string rock, string paper, string scissors, string spock, string lizard)
+        //{
 
+        //}
+
+        public RPSLS()
+        {
+            UI = new RPSLS_UI();
         }
 
         //memeber methods
@@ -38,11 +44,7 @@ namespace RSPLS
 
         //- Create a console application for Rock, Paper, Scissors, Lizard, Spock
         //- Your game should have the option of Single player(vs AI) or 2 player(Human vs Human)
-        public void DisplayRules()
-        {
-            Console.WriteLine("show rules");
-            Console.ReadLine();        
-        }
+
 
 
         public void SinglePlayerOrMultiPlayer()
@@ -93,7 +95,7 @@ namespace RSPLS
                     Console.WriteLine("Computer threw Lizard.");
                     break;
             }
-          }
+        }
 
 
         
@@ -103,40 +105,30 @@ namespace RSPLS
         // d = 0 => tie
 
 
-        //- Your game must be a minimum of best of three to decide a winner
-        //Rules for Rock, Paper, Scissors, Lizard, Spock:
-        //Scissors cuts Paper
-        //Paper covers Rock
-        //Rock crushes Lizard
-        //Lizard poisons Spock
-        //Spock smashes Scissors
-        //Scissors decapitates Lizard
-        //Lizard eats Paper
-        //Paper disproves Spock
-        //Spock vaporizes Rock
-        //(and as it always has) Rock crushes Scissors
+
 
         public void PlayGame()
         {
-            Console.WriteLine("Type in what you want to play. \n Rock, Paper, Scissors, Lizard, Spock, SHOOT!");
-            string shoot = Console.ReadLine();
-            switch (shoot)
-            {
-                case "rock":
+            
+            //Console.WriteLine("Type in what you want to play. \n Rock, Paper, Scissors, Lizard, Spock, SHOOT!");
+            //string shoot = Console.ReadLine();
+            //switch (shoot)
+            //{
+            //    case "rock":
 
-                    break;
-                case "paper":
+            //        break;
+            //    case "paper":
 
-                    break;
-                case "scissors":
+            //        break;
+            //    case "scissors":
 
-                    break;
-                case "lizzard":
+            //        break;
+            //    case "lizzard":
 
-                    break;
-                case "spock":
+            //        break;
+            //    case "spock":
 
-                    break;
+            //        break;
              }
         }
 

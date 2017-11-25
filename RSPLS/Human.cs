@@ -11,7 +11,7 @@ namespace RSPLS
         //member variables
 
         //constructor
-        public void Human()
+        public Human()
         {
             Console.WriteLine("What is your name?");
             name = Console.ReadLine();
