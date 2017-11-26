@@ -21,7 +21,9 @@ namespace RSPLS
         public void DisplayRules()
         {
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
+            Console.WriteLine(" ");
             Console.WriteLine("Rules for Rock, Paper, Scissors, Lizard, Spock:");
+            Console.WriteLine(" ");
             Console.WriteLine("Scissors cuts Paper");
             Console.WriteLine("Paper covers Rock");
             Console.WriteLine("Rock crushes Lizard");
@@ -33,7 +35,31 @@ namespace RSPLS
             Console.WriteLine("Spock vaporizes Rock");
             Console.WriteLine("(and as it always has) Rock crushes Scissors");
             Console.WriteLine(" ");
-            Console.WriteLine("Best of three decides the winner");
+            Console.WriteLine("Best of three decides the winner. Have fun!!");
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadLine();
         }
+
+        public string GetName()
+        {
+            Console.WriteLine("Enter your name:");
+            return Console.ReadLine();
+        }
+
+        public string DisplayOptions()
+        {
+            Console.WriteLine("Enter the number that corresponds to the choice you want");
+            Console.WriteLine("1: Rock");
+            Console.WriteLine("2: Paper");
+            Console.WriteLine("3: Scissors");
+            Console.WriteLine("4: Lizard");
+            Console.WriteLine("5: Spock");
+            return Console.ReadLine();
+        }
+
+
+
+
+
     }
 }

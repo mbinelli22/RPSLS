@@ -9,17 +9,8 @@ namespace RSPLS
     class RPSLS
     {
         //member variables
-        public string Rock;
-        public string Paper;
-        public string Scissors;
-        public string Spock;
-        public string Lizard;
-        int randomThrow;
-        int rock = 0;
-        int paper = 1;
-        int scissors = 2;
-        int spock = 3;
-        int lizard = 4;
+
+        List<string> choices;
 
         Player player1;
         Player player2;
@@ -35,20 +26,13 @@ namespace RSPLS
         public RPSLS()
         {
             UI = new RPSLS_UI();
+            choices = new List<string>() {"Rock", "Paper", "Scissors", "Lizard", "Spock" };
         }
 
         //memeber methods
-
-
-
-
-        //- Create a console application for Rock, Paper, Scissors, Lizard, Spock
-        //- Your game should have the option of Single player(vs AI) or 2 player(Human vs Human)
-
-
-
         public void SinglePlayerOrMultiPlayer()
         {
+            Console.WriteLine("Lets get started!");
             Console.WriteLine("To play agianst the computer type 'ai'. To play human vs human type 'human'.");
             string vsDecision = Console.ReadLine();
             player1 = new Human();
@@ -62,6 +46,11 @@ namespace RSPLS
                     break;
             }
         }
+
+
+
+        //- Create a console application for Rock, Paper, Scissors, Lizard, Spock
+        //- Your game should have the option of Single player(vs AI) or 2 player(Human vs Human)
 
         public void DisplayScore()
         {
@@ -103,13 +92,23 @@ namespace RSPLS
         // d = 1 or d = 3 => a wins
         // d = 2 or d = 4 => b wins
         // d = 0 => tie
-
+        public void CheckScore()
+        {
+            if(player1.score == 2)
+            {
+                Console.WriteLine(player1.name + " Wins!");
+            }
+            else if (player2.score == 2)
+            {
+                Console.WriteLine(player2.name + " Wins!");
+            }
+        }
 
 
 
         public void PlayGame()
         {
-            
+            UI.DisplayRules();
             //Console.WriteLine("Type in what you want to play. \n Rock, Paper, Scissors, Lizard, Spock, SHOOT!");
             //string shoot = Console.ReadLine();
             //switch (shoot)
@@ -129,7 +128,7 @@ namespace RSPLS
             //    case "spock":
 
             //        break;
-             }
+             //}
         }
 
 
