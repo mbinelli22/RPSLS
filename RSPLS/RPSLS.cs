@@ -30,6 +30,24 @@ namespace RSPLS
         }
 
         //memeber methods
+        public string GetName()
+        {
+            Console.WriteLine("Enter your name:");
+            string player1Name = Console.ReadLine();
+            return Console.ReadLine();
+        }
+
+        public string DisplayOptions()
+        {
+            Console.WriteLine("Enter the number that corresponds to the choice you want");
+            Console.WriteLine("1: Rock");
+            Console.WriteLine("2: Paper");
+            Console.WriteLine("3: Scissors");
+            Console.WriteLine("4: Lizard");
+            Console.WriteLine("5: Spock");
+            return Console.ReadLine();
+        }
+
         public void SinglePlayerOrMultiPlayer()
         {
             Console.WriteLine("Lets get started!");
@@ -92,6 +110,36 @@ namespace RSPLS
         // d = 1 or d = 3 => a wins
         // d = 2 or d = 4 => b wins
         // d = 0 => tie
+
+        public void GetMatchWinner()
+        {
+            int d;
+            for (d = (5 + player1.choice - player2.choice) % 5)
+            {
+                if (d = 1 && d = 3)
+                {
+                    Console.WriteLine(player1.name + "won thae match");
+                    player1.score++;
+                }
+                else if (d = 2 && d = 4)
+                {
+                    Console.WriteLine(player2.name + "won that match");
+                    player2.score++;
+                }
+                else if (d == 0)
+                {
+                    Console.WriteLine("tie! hit any key to continue");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("please select a number representing your choice");
+                }
+            }
+        }
+
+
+
         public void CheckScore()
         {
             if(player1.score == 2)
@@ -109,26 +157,33 @@ namespace RSPLS
         public void PlayGame()
         {
             UI.DisplayRules();
-            //Console.WriteLine("Type in what you want to play. \n Rock, Paper, Scissors, Lizard, Spock, SHOOT!");
-            //string shoot = Console.ReadLine();
-            //switch (shoot)
-            //{
-            //    case "rock":
+            SinglePlayerOrMultiPlayer();
+            GetName();
 
-            //        break;
-            //    case "paper":
+        }
 
-            //        break;
-            //    case "scissors":
-
-            //        break;
-            //    case "lizzard":
-
-            //        break;
-            //    case "spock":
-
-            //        break;
-             //}
+        public void GetChoice()
+        {
+            Console.WriteLine("Type in what you want to play. \n Rock, Paper, Scissors, Lizard, Spock, SHOOT!");
+            string shoot = Console.ReadLine();
+            switch (shoot)
+            {
+                case "rock":
+                    RockVs();
+                    break;
+                case "paper":
+                    PaperVs();
+                    break;
+                case "scissors":
+                    ScissorsVs();
+                    break;
+                case "lizzard":
+                    LizzardVs();
+                    break;
+                case "spock":
+                    SpockVs();
+                    break;
+            }
         }
 
 
