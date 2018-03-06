@@ -39,7 +39,7 @@ namespace RSPLS
 
         public string DisplayOptions()
         {
-            Console.WriteLine("Enter the number that corresponds to the choice you want");
+            Console.WriteLine("Enter the number that corresponds to the choice you want:");
             Console.WriteLine("1: Rock");
             Console.WriteLine("2: Paper");
             Console.WriteLine("3: Scissors");
@@ -116,12 +116,12 @@ namespace RSPLS
             int d;
             for (d = (5 + player1.choice - player2.choice) % 5)
             {
-                if (d = 1 && d = 3)
+                if (d == 1 || d == 3)
                 {
                     Console.WriteLine(player1.name + "won thae match");
                     player1.score++;
                 }
-                else if (d = 2 && d = 4)
+                else if (d == 2 || d == 4)
                 {
                     Console.WriteLine(player2.name + "won that match");
                     player2.score++;
@@ -169,19 +169,19 @@ namespace RSPLS
             switch (shoot)
             {
                 case "rock":
-                    RockVs();
+
                     break;
                 case "paper":
-                    PaperVs();
+
                     break;
                 case "scissors":
-                    ScissorsVs();
+
                     break;
                 case "lizzard":
-                    LizzardVs();
+
                     break;
                 case "spock":
-                    SpockVs();
+
                     break;
             }
         }
