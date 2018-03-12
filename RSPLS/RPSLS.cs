@@ -15,6 +15,8 @@ namespace RSPLS
         Player player1;
         Player player2;
         RPSLS_UI UI;
+        List<string> throws = new List<string>() { "Rock", "Paper", "Scissors", "Spock", "Lizard" };
+
 
 
         //constructor
@@ -33,10 +35,10 @@ namespace RSPLS
         public string GetName()
         {
             Console.WriteLine("Enter your name:");
-            string player1Name = Console.ReadLine();
+            player1.name = Console.ReadLine();
             return Console.ReadLine();
         }
-
+        
         public string DisplayOptions()
         {
             Console.WriteLine("Enter the number that corresponds to the choice you want:");
@@ -75,7 +77,6 @@ namespace RSPLS
             Console.WriteLine("{0} {1} ");
         }
 
-        List<string> throws = new List<string>() {"Rock", "Paper", "Scissors", "Spock", "Lizard"};
 
 
 
@@ -96,10 +97,10 @@ namespace RSPLS
                     Console.WriteLine("Computer threw Scissors.");
                     break;
                 case 3:
-                    Console.WriteLine("Computer threw Spock.");
+                    Console.WriteLine("Computer threw Lizard.");
                     break;
                 case 4:
-                    Console.WriteLine("Computer threw Lizard.");
+                    Console.WriteLine("Computer threw Spock.");
                     break;
             }
         }
@@ -114,16 +115,16 @@ namespace RSPLS
         public void GetMatchWinner()
         {
             int d;
-            for (d = (5 + player1.choice - player2.choice) % 5)
+            for (d = (5 + player1.choice - player2.choice) % 5 ) 
             {
                 if (d == 1 || d == 3)
                 {
-                    Console.WriteLine(player1.name + "won thae match");
+                    Console.WriteLine(player1.name + "won that game");
                     player1.score++;
                 }
                 else if (d == 2 || d == 4)
                 {
-                    Console.WriteLine(player2.name + "won that match");
+                    Console.WriteLine(player2.name + "won that game");
                     player2.score++;
                 }
                 else if (d == 0)

@@ -10,6 +10,7 @@ namespace RSPLS
     {
         //member variables
         Random random;
+   
 
         //constructor
         public Computer()
@@ -24,7 +25,7 @@ namespace RSPLS
         {
             base.Choice(choices);
             choice = random.Next(5);
-            Console.WriteLine(name + " chose" + choices[choice] + ".");
+            Console.WriteLine("The Computer chose" + choices[choice] + ".");
         }
     }
 }
