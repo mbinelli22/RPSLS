@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RSPLS;
 
 namespace RSPLS
 {
@@ -17,14 +18,7 @@ namespace RSPLS
         RPSLS_UI UI;
         List<string> throws = new List<string>() { "Rock", "Paper", "Scissors", "Spock", "Lizard" };
 
-
-
-        //constructor
-        //public RPSLS(string rock, string paper, string scissors, string spock, string lizard)
-        //{
-
-        //}
-
+        //constuctor
         public RPSLS()
         {
             UI = new RPSLS_UI();
@@ -32,11 +26,20 @@ namespace RSPLS
         }
 
         //memeber methods
-        public string GetName()
+
+        public void PlayGame()
+        {
+            player1 = new Player();
+            UI.DisplayRules();
+            GetPlayer1Name();
+            SinglePlayerOrMultiPlayer();
+            GetChoice();
+        }
+
+        public void GetPlayer1Name()
         {
             Console.WriteLine("Enter your name:");
             player1.name = Console.ReadLine();
-            return Console.ReadLine();
         }
         
         public string DisplayOptions()
@@ -55,19 +58,24 @@ namespace RSPLS
             Console.WriteLine("Lets get started!");
             Console.WriteLine("To play agianst the computer type 'ai'. To play human vs human type 'human'.");
             string vsDecision = Console.ReadLine();
-            player1 = new Human();
+            player1 = new Player ();
             switch (vsDecision)
             {
                 case "ai":
                     player2 = new Computer();
                     break;
                 case "human":
-                    player2 = new Human();
+                    player2 = new Player();
+                    GetPlayer2Name();
                     break;
             }
         }
 
-
+        public void GetPlayer2Name()
+        {
+            Console.WriteLine("Player 2 enter your name: ");
+            player2.name = Console.ReadLine();
+        }
 
         //- Create a console application for Rock, Paper, Scissors, Lizard, Spock
         //- Your game should have the option of Single player(vs AI) or 2 player(Human vs Human)
@@ -114,9 +122,8 @@ namespace RSPLS
 
         public void GetMatchWinner()
         {
-            int d;
-            for (d = (5 + player1.choice - player2.choice) % 5 ) 
-            {
+            int d = ((5 + player1.choice - player2.choice) % 5); 
+            
                 if (d == 1 || d == 3)
                 {
                     Console.WriteLine(player1.name + "won that game");
@@ -136,7 +143,6 @@ namespace RSPLS
                 {
                     Console.WriteLine("please select a number representing your choice");
                 }
-            }
         }
 
 
@@ -155,13 +161,7 @@ namespace RSPLS
 
 
 
-        public void PlayGame()
-        {
-            UI.DisplayRules();
-            SinglePlayerOrMultiPlayer();
-            GetName();
 
-        }
 
         public void GetChoice()
         {

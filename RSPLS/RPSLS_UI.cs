@@ -36,7 +36,7 @@ namespace RSPLS
             Console.WriteLine("(and as it always has) Rock crushes Scissors");
             Console.WriteLine(" ");
             Console.WriteLine("Best of three decides the winner. Have fun!!");
-            Console.WriteLine("(Press any key to continue.)");
+            Console.WriteLine("(Press enter to continue.)");
             Console.ReadLine();
         }
 
