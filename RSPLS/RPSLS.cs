@@ -32,8 +32,10 @@ namespace RSPLS
             player1 = new Player();
             UI.DisplayRules();
             GetPlayer1Name();
-            SinglePlayerOrMultiPlayer();
-            GetChoice();
+            DecidePlayer2();
+            CheckScore();
+
+
         }
 
         public void GetPlayer1Name()
@@ -41,7 +43,13 @@ namespace RSPLS
             Console.WriteLine("Enter your name:");
             player1.name = Console.ReadLine();
         }
-        
+
+        public void GetPlayer2Name()
+        {
+            Console.WriteLine("Player 2 enter your name: ");
+            player2.name = Console.ReadLine();
+        }
+
         public string DisplayOptions()
         {
             Console.WriteLine("Enter the number that corresponds to the choice you want:");
@@ -53,7 +61,7 @@ namespace RSPLS
             return Console.ReadLine();
         }
 
-        public void SinglePlayerOrMultiPlayer()
+        public void DecidePlayer2()
         {
             Console.WriteLine("Lets get started!");
             Console.WriteLine("To play agianst the computer type 'ai'. To play human vs human type 'human'.");
@@ -63,6 +71,9 @@ namespace RSPLS
             {
                 case "ai":
                     player2 = new Computer();
+                    GetChoice();
+                    GetRandomThrow();
+                    GetMatchWinner();
                     break;
                 case "human":
                     player2 = new Player();
@@ -71,11 +82,7 @@ namespace RSPLS
             }
         }
 
-        public void GetPlayer2Name()
-        {
-            Console.WriteLine("Player 2 enter your name: ");
-            player2.name = Console.ReadLine();
-        }
+
 
         //- Create a console application for Rock, Paper, Scissors, Lizard, Spock
         //- Your game should have the option of Single player(vs AI) or 2 player(Human vs Human)
@@ -85,9 +92,6 @@ namespace RSPLS
             Console.WriteLine("{0} {1} ");
         }
 
-
-
-
         private void GetRandomThrow()
         {
             int randomThrow;
@@ -96,25 +100,28 @@ namespace RSPLS
             switch (randomThrow)
             {
                 case 0:
+                    player2.choice = randomThrow;
                     Console.WriteLine("Computer threw Rock.");
                     break;
                 case 1:
+                    player2.choice = randomThrow;
                     Console.WriteLine("Computer threw Paper.");
                     break;
                 case 2:
+                    player2.choice = randomThrow;
                     Console.WriteLine("Computer threw Scissors.");
                     break;
                 case 3:
+                    player2.choice = randomThrow;
                     Console.WriteLine("Computer threw Lizard.");
                     break;
                 case 4:
+                    player2.choice = randomThrow;
                     Console.WriteLine("Computer threw Spock.");
                     break;
             }
         }
 
-
-        
         // d = (5 + a - b) % 5
         // d = 1 or d = 3 => a wins
         // d = 2 or d = 4 => b wins
@@ -157,32 +164,48 @@ namespace RSPLS
             {
                 Console.WriteLine(player2.name + " Wins!");
             }
+            else
+            {
+
+            }
         }
-
-
-
 
 
         public void GetChoice()
         {
-            Console.WriteLine("Type in what you want to play. \n Rock, Paper, Scissors, Lizard, Spock, SHOOT!");
-            string shoot = Console.ReadLine();
+            Console.WriteLine("Type in the number that corresponds to your choice: ");
+            Console.WriteLine("1: Rock");
+            Console.WriteLine("2: Paper");
+            Console.WriteLine("3: Scissors");
+            Console.WriteLine("4: Lizard");
+            Console.WriteLine("5: Spock");
+            Console.WriteLine("And Shoot!");
+            int shoot = Convert.ToInt32(Console.ReadLine());
             switch (shoot)
             {
-                case "rock":
-
+                case 1:
+                    player1.choice = shoot;
+                    Console.WriteLine("You chose Rock");
                     break;
-                case "paper":
-
+                case 2:
+                    player1.choice = shoot;
+                    Console.WriteLine("You chose Paper");
                     break;
-                case "scissors":
-
+                case 3:
+                    player1.choice = shoot;
+                    Console.WriteLine("You chose Scissors");
                     break;
-                case "lizzard":
-
+                case 4:
+                    player1.choice = shoot;
+                    Console.WriteLine("You chose Lizard");
                     break;
-                case "spock":
-
+                case 5:
+                    player1.choice = shoot;
+                    Console.WriteLine("You chose Spock");
+                    break;
+                default:
+                    Console.WriteLine("You have chosen an option that is not valid.");
+                    GetChoice();
                     break;
             }
         }

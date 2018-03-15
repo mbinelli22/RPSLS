@@ -3,3 +3,4 @@ C:\Users\Michael\OneDrive\DevCodeCamp\C#\RSPLS\RSPLS\bin\Debug\RSPLS.exe
 C:\Users\Michael\OneDrive\DevCodeCamp\C#\RSPLS\RSPLS\bin\Debug\RSPLS.pdb
 C:\Users\Michael\OneDrive\DevCodeCamp\C#\RSPLS\RSPLS\obj\Debug\RSPLS.exe
 C:\Users\Michael\OneDrive\DevCodeCamp\C#\RSPLS\RSPLS\obj\Debug\RSPLS.pdb
+C:\Users\Michael\OneDrive\DevCodeCamp\C#\RSPLS\RSPLS\obj\Debug\RSPLS.csprojResolveAssemblyReference.cache
